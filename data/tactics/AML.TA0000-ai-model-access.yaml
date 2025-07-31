@@ -1,0 +1,100 @@
+tactic:
+  id: AML.TA0000
+  name: AI Model Access
+  description: 'The adversary is attempting to gain some level of access to an AI
+    model.
+
+
+    AI Model Access enables techniques that use various types of access to the AI
+    model that can be used by the adversary to gain information, develop attacks,
+    and as a means to input data to the model.
+
+    The level of access can range from the full knowledge of the internals of the
+    model to access to the physical environment where data is collected for use in
+    the AI model.
+
+    The adversary may use varying levels of model access during the course of their
+    attack, from staging the attack to impacting the target system.
+
+
+    Access to an AI model may require access to the system housing the model, the
+    model may be publically accessible via an API, or it may be accessed indirectly
+    via interaction with a product or service that utilizes AI as part of its processes.'
+  object-type: tactic
+  created_date: 2021-05-13
+  modified_date: 2025-04-09
+summary:
+  total_techniques: 4
+  main_techniques: 4
+  subtechniques: 0
+techniques:
+  main_techniques:
+  - id: AML.T0040
+    name: AI Model Inference API Access
+    description: 'Adversaries may gain access to a model via legitimate access to
+      the inference API.
+
+      Inference API access can be a source of information to the adversary ([Discover
+      AI Model Ontology](/techniques/AML.T0013), [Discover AI Model Family](/techniques/AML.T0014)),
+      a means of staging the attack ([Verify Attack](/techniques/AML.T0042), [Craft
+      Adversarial Data](/techniques/AML.T0043)), or for introducing data to the target
+      system for Impact ([Evade AI Model](/techniques/AML.T0015), [Erode AI Model
+      Integrity](/techniques/AML.T0031)).
+
+
+      Many systems rely on the same models provided via an inference API, which means
+      they share the same vulnerabilities. This is especially true of foundation models
+      which are prohibitively resource intensive to train. Adversaries may use their
+      access to model APIs to identify vulnerabilities such as jailbreaks or hallucinations
+      and then target applications that use the same models.'
+    object-type: technique
+    tactics:
+    - AML.TA0000
+    created_date: 2021-05-13
+    modified_date: 2025-03-12
+  - id: AML.T0041
+    name: Physical Environment Access
+    description: 'In addition to the attacks that take place purely in the digital
+      domain, adversaries may also exploit the physical environment for their attacks.
+
+      If the model is interacting with data collected from the real world in some
+      way, the adversary can influence the model through access to wherever the data
+      is being collected.
+
+      By modifying the data in the collection process, the adversary can perform modified
+      versions of attacks designed for digital access.
+
+      '
+    object-type: technique
+    tactics:
+    - AML.TA0000
+    created_date: 2021-05-13
+    modified_date: 2021-05-13
+  - id: AML.T0044
+    name: Full AI Model Access
+    description: 'Adversaries may gain full "white-box" access to an AI model.
+
+      This means the adversary has complete knowledge of the model architecture, its
+      parameters, and class ontology.
+
+      They may exfiltrate the model to [Craft Adversarial Data](/techniques/AML.T0043)
+      and [Verify Attack](/techniques/AML.T0042) in an offline where it is hard to
+      detect their behavior.'
+    object-type: technique
+    tactics:
+    - AML.TA0000
+    created_date: 2021-05-13
+    modified_date: 2025-04-09
+  - id: AML.T0047
+    name: AI-Enabled Product or Service
+    description: 'Adversaries may use a product or service that uses artificial intelligence
+      under the hood to gain access to the underlying AI model.
+
+      This type of indirect model access may reveal details of the AI model or its
+      inferences in logs or metadata.'
+    object-type: technique
+    tactics:
+    - AML.TA0000
+    created_date: 2021-05-13
+    modified_date: 2025-04-09
+  subtechniques: []

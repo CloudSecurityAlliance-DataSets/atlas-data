@@ -1,0 +1,268 @@
+tactic:
+  id: AML.TA0003
+  name: Resource Development
+  description: 'The adversary is trying to establish resources they can use to support
+    operations.
+
+
+    Resource Development consists of techniques that involve adversaries creating,
+
+    purchasing, or compromising/stealing resources that can be used to support targeting.
+
+    Such resources include AI artifacts, infrastructure, accounts, or capabilities.
+
+    These resources can be leveraged by the adversary to aid in other phases of the
+    adversary lifecycle, such as [AI Attack Staging](/tactics/AML.TA0001).'
+  object-type: tactic
+  created_date: 2022-01-24
+  modified_date: 2025-04-09
+  ATT&CK-reference:
+    id: TA0042
+    url: https://attack.mitre.org/tactics/TA0042/
+summary:
+  total_techniques: 12
+  main_techniques: 12
+  subtechniques: 0
+techniques:
+  main_techniques:
+  - id: AML.T0002
+    name: Acquire Public AI Artifacts
+    description: 'Adversaries may search public sources, including cloud storage,
+      public-facing services, and software or data repositories, to identify AI artifacts.
+
+      These AI artifacts may include the software stack used to train and deploy models,
+      training and testing data, model configurations and parameters.
+
+      An adversary will be particularly interested in artifacts hosted by or associated
+      with the victim organization as they may represent what that organization uses
+      in a production environment.
+
+      Adversaries may identify artifact repositories via other resources associated
+      with the victim organization (e.g. [Search Victim-Owned Websites](/techniques/AML.T0003)
+      or [Search Open Technical Databases](/techniques/AML.T0000)).
+
+      These AI artifacts often provide adversaries with details of the AI task and
+      approach.
+
+
+      AI artifacts can aid in an adversary''s ability to [Create Proxy AI Model](/techniques/AML.T0005).
+
+      If these artifacts include pieces of the actual model in production, they can
+      be used to directly [Craft Adversarial Data](/techniques/AML.T0043).
+
+      Acquiring some artifacts requires registration (providing user details such
+      email/name), AWS keys, or written requests, and may require the adversary to
+      [Establish Accounts](/techniques/AML.T0021).
+
+
+      Artifacts might be hosted on victim-controlled infrastructure, providing the
+      victim with some information on who has accessed that data.'
+    object-type: technique
+    tactics:
+    - AML.TA0003
+    created_date: 2021-05-13
+    modified_date: 2025-04-09
+  - id: AML.T0008
+    name: Acquire Infrastructure
+    description: 'Adversaries may buy, lease, or rent infrastructure for use throughout
+      their operation.
+
+      A wide variety of infrastructure exists for hosting and orchestrating adversary
+      operations.
+
+      Infrastructure solutions include physical or cloud servers, domains, mobile
+      devices, and third-party web services.
+
+      Free resources may also be used, but they are typically limited.
+
+      Infrastructure can also include physical components such as countermeasures
+      that degrade or disrupt AI components or sensors, including printed materials,
+      wearables, or disguises.
+
+
+      Use of these infrastructure solutions allows an adversary to stage, launch,
+      and execute an operation.
+
+      Solutions may help adversary operations blend in with traffic that is seen as
+      normal, such as contact to third-party web services.
+
+      Depending on the implementation, adversaries may use infrastructure that makes
+      it difficult to physically tie back to them as well as utilize infrastructure
+      that can be rapidly provisioned, modified, and shut down.'
+    object-type: technique
+    tactics:
+    - AML.TA0003
+    created_date: 2021-05-13
+    modified_date: 2025-03-12
+  - id: AML.T0016
+    name: Obtain Capabilities
+    description: 'Adversaries may search for and obtain software capabilities for
+      use in their operations.
+
+      Capabilities may be specific to AI-based attacks [Adversarial AI Attack Implementations](/techniques/AML.T0016.000)
+      or generic software tools repurposed for malicious intent ([Software Tools](/techniques/AML.T0016.001)).
+      In both instances, an adversary may modify or customize the capability to aid
+      in targeting a particular AI-enabled system.'
+    object-type: technique
+    ATT&CK-reference:
+      id: T1588
+      url: https://attack.mitre.org/techniques/T1588/
+    tactics:
+    - AML.TA0003
+    created_date: 2021-05-13
+    modified_date: 2025-04-09
+  - id: AML.T0017
+    name: Develop Capabilities
+    description: Adversaries may develop their own capabilities to support operations.
+      This process encompasses identifying requirements, building solutions, and deploying
+      capabilities. Capabilities used to support attacks on AI-enabled systems are
+      not necessarily AI-based themselves. Examples include setting up websites with
+      adversarial information or creating Jupyter notebooks with obfuscated exfiltration
+      code.
+    object-type: technique
+    ATT&CK-reference:
+      id: T1587
+      url: https://attack.mitre.org/techniques/T1587/
+    tactics:
+    - AML.TA0003
+    created_date: 2023-10-25
+    modified_date: 2025-04-09
+  - id: AML.T0019
+    name: Publish Poisoned Datasets
+    description: 'Adversaries may [Poison Training Data](/techniques/AML.T0020) and
+      publish it to a public location.
+
+      The poisoned dataset may be a novel dataset or a poisoned variant of an existing
+      open source dataset.
+
+      This data may be introduced to a victim system via [AI Supply Chain Compromise](/techniques/AML.T0010).
+
+      '
+    object-type: technique
+    tactics:
+    - AML.TA0003
+    created_date: 2021-05-13
+    modified_date: 2021-05-13
+  - id: AML.T0020
+    name: Poison Training Data
+    description: 'Adversaries may attempt to poison datasets used by an AI model by
+      modifying the underlying data or its labels.
+
+      This allows the adversary to embed vulnerabilities in AI models trained on the
+      data that may not be easily detectable.
+
+      Data poisoning attacks may or may not require modifying the labels.
+
+      The embedded vulnerability is activated at a later time by data samples with
+      an [Insert Backdoor Trigger](/techniques/AML.T0043.004)
+
+
+      Poisoned data can be introduced via [AI Supply Chain Compromise](/techniques/AML.T0010)
+      or the data may be poisoned after the adversary gains [Initial Access](/tactics/AML.TA0004)
+      to the system.'
+    object-type: technique
+    tactics:
+    - AML.TA0003
+    - AML.TA0006
+    created_date: 2021-05-13
+    modified_date: 2025-04-09
+  - id: AML.T0021
+    name: Establish Accounts
+    description: 'Adversaries may create accounts with various services for use in
+      targeting, to gain access to resources needed in [AI Attack Staging](/tactics/AML.TA0001),
+      or for victim impersonation.
+
+      '
+    object-type: technique
+    ATT&CK-reference:
+      id: T1585
+      url: https://attack.mitre.org/techniques/T1585/
+    tactics:
+    - AML.TA0003
+    created_date: 2022-01-24
+    modified_date: 2023-01-18
+  - id: AML.T0058
+    name: Publish Poisoned Models
+    description: Adversaries may publish a poisoned model to a public location such
+      as a model registry or code repository. The poisoned model may be a novel model
+      or a poisoned variant of an existing open-source model. This model may be introduced
+      to a victim system via [AI Supply Chain Compromise](/techniques/AML.T0010).
+    object-type: technique
+    tactics:
+    - AML.TA0003
+    created_date: 2025-03-12
+    modified_date: 2025-03-12
+  - id: AML.T0060
+    name: Publish Hallucinated Entities
+    description: Adversaries may create an entity they control, such as a software
+      package, website, or email address to a source hallucinated by an LLM. The hallucinations
+      may take the form of package names commands, URLs, company names, or email addresses
+      that point the victim to the entity controlled by the adversary. When the victim
+      interacts with the adversary-controlled entity, the attack can proceed.
+    object-type: technique
+    tactics:
+    - AML.TA0003
+    created_date: 2025-03-12
+    modified_date: 2025-03-12
+  - id: AML.T0065
+    name: LLM Prompt Crafting
+    description: 'Adversaries may use their acquired knowledge of the target generative
+      AI system to craft prompts that bypass its defenses and allow malicious instructions
+      to be executed.
+
+
+      The adversary may iterate on the prompt to ensure that it works as-intended
+      consistently.'
+    object-type: technique
+    tactics:
+    - AML.TA0003
+    created_date: 2025-03-12
+    modified_date: 2025-03-12
+  - id: AML.T0066
+    name: Retrieval Content Crafting
+    description: 'Adversaries may write content designed to be retrieved by user queries
+      and influence a user of the system in some way. This abuses the trust the user
+      has in the system.
+
+
+      The crafted content can be combined with a prompt injection. It can also stand
+      alone in a separate document or email. The adversary must get the crafted content
+      into the victim\u0027s database, such as a vector database used in a retrieval
+      augmented generation (RAG) system. This may be accomplished via cyber access,
+      or by abusing the ingestion mechanisms common in RAG systems (see [RAG Poisoning](/techniques/AML.T0070)).
+
+
+      Large language models may be used as an assistant to aid an adversary in crafting
+      content.'
+    object-type: technique
+    tactics:
+    - AML.TA0003
+    created_date: 2025-03-12
+    modified_date: 2025-03-12
+  - id: AML.T0079
+    name: Stage Capabilities
+    description: 'Adversaries may upload, install, or otherwise set up capabilities
+      that can be used during targeting. To support their operations, an adversary
+      may need to take capabilities they developed ([Develop Capabilities](/techniques/AML.T0017))
+      or obtained ([Obtain Capabilities](/techniques/AML.T0016)) and stage them on
+      infrastructure under their control. These capabilities may be staged on infrastructure
+      that was previously purchased/rented by the adversary ([Acquire Infrastructure](/techniques/AML.T0008))
+      or was otherwise compromised by them. Capabilities may also be staged on web
+      services, such as GitHub, model registries, such as Hugging Face, or container
+      registries.
+
+
+      Adversaries may stage a variety of AI Artifacts including poisoned datasets
+      ([Publish Poisoned Datasets](/techniques/AML.T0019), malicious models ([Publish
+      Poisoned Models](/techniques/AML.T0058)), and prompt injections. They may target
+      names of legitimate companies or products, engage in typosquatting, or use hallucinated
+      entities ([Discover LLM Hallucinations](/techniques/AML.T0062)).'
+    object-type: technique
+    ATT&CK-reference:
+      id: T1608
+      url: https://attack.mitre.org/techniques/T1608/
+    tactics:
+    - AML.TA0003
+    created_date: 2025-04-16
+    modified_date: 2025-04-21
+  subtechniques: []

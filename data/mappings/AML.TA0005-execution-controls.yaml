@@ -1,0 +1,73 @@
+tactic:
+  id: AML.TA0005
+  name: Execution
+  description: 'The adversary is trying to run malicious code embedded in AI artifacts
+    or software.
+
+
+    Execution consi...'
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0011
+    name: User Execution
+    description: 'An adversary may rely upon specific actions by a user in order to
+      gain execution.
+
+      Users may inadvertently execute unsafe code introduced via [AI Suppl...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0050
+    name: Command and Scripting Interpreter
+    description: Adversaries may abuse command and script interpreters to execute
+      commands, scripts, or binaries. These interfaces and languages provide ways
+      of intera...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0051
+    name: LLM Prompt Injection
+    description: 'An adversary may craft malicious prompts as inputs to an LLM that
+      cause the LLM to act in unintended ways.
+
+      These "prompt injections" are often designe...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0053
+    name: LLM Plugin Compromise
+    description: 'Adversaries may use their access to an LLM that is part of a larger
+      system to compromise connected plugins.
+
+      LLMs are often connected to other services...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

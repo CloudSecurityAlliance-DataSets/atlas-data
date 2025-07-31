@@ -1,0 +1,65 @@
+{
+  "tactic": {
+    "id": "AML.TA0009",
+    "name": "Collection",
+    "description": "The adversary is trying to gather AI artifacts and other related information relevant to their goal.\n\nCollection consists of techniques adversaries may use to gather information and the sources information is collected from that are relevant to following through on the adversary's objectives.\nFrequently, the next goal after collecting data is to steal (exfiltrate) the AI artifacts, or use the collected information to stage future operations.\nCommon target sources include software repositories, container registries, model repositories, and object stores.",
+    "object-type": "tactic",
+    "created_date": "2022-01-24",
+    "modified_date": "2025-04-09",
+    "ATT&CK-reference": {
+      "id": "TA0009",
+      "url": "https://attack.mitre.org/tactics/TA0009/"
+    }
+  },
+  "summary": {
+    "total_techniques": 3,
+    "main_techniques": 3,
+    "subtechniques": 0
+  },
+  "techniques": {
+    "main_techniques": [
+      {
+        "id": "AML.T0035",
+        "name": "AI Artifact Collection",
+        "description": "Adversaries may collect AI artifacts for [Exfiltration](/tactics/AML.TA0010) or for use in [AI Attack Staging](/tactics/AML.TA0001).\nAI artifacts include models and datasets as well as other telemetry data produced when interacting with a model.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0009"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      },
+      {
+        "id": "AML.T0036",
+        "name": "Data from Information Repositories",
+        "description": "Adversaries may leverage information repositories to mine valuable information.\nInformation repositories are tools that allow for storage of information, typically to facilitate collaboration or information sharing between users, and can store a wide variety of data that may aid adversaries in further objectives, or direct access to the target information.\n\nInformation stored in a repository may vary based on the specific instance or environment.\nSpecific common information repositories include SharePoint, Confluence, and enterprise databases such as SQL Server.\n",
+        "object-type": "technique",
+        "ATT&CK-reference": {
+          "id": "T1213",
+          "url": "https://attack.mitre.org/techniques/T1213/"
+        },
+        "tactics": [
+          "AML.TA0009"
+        ],
+        "created_date": "2022-01-24",
+        "modified_date": "2023-01-18"
+      },
+      {
+        "id": "AML.T0037",
+        "name": "Data from Local System",
+        "description": "Adversaries may search local system sources, such as file systems and configuration files or local databases, to find files of interest and sensitive data prior to Exfiltration.\n\nThis can include basic fingerprinting information and sensitive data such as ssh keys.\n",
+        "object-type": "technique",
+        "ATT&CK-reference": {
+          "id": "T1005",
+          "url": "https://attack.mitre.org/techniques/T1005/"
+        },
+        "tactics": [
+          "AML.TA0009"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2023-01-18"
+      }
+    ],
+    "subtechniques": []
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "tactic": {
+    "id": "AML.TA0007",
+    "name": "Defense Evasion",
+    "description": "The adversary is trying to avoid being detected by AI-enabled security software.\n\nDefense Evasion consists of techniques that adversaries use to avoid detection throughout their compromise.\nTechniques used for defense evasion include evading AI-enabled security software such as malware detectors.",
+    "object-type": "tactic",
+    "created_date": "2022-01-24",
+    "modified_date": "2025-04-09",
+    "ATT&CK-reference": {
+      "id": "TA0005",
+      "url": "https://attack.mitre.org/tactics/TA0005/"
+    }
+  },
+  "summary": {
+    "total_techniques": 8,
+    "main_techniques": 8,
+    "subtechniques": 0
+  },
+  "techniques": {
+    "main_techniques": [
+      {
+        "id": "AML.T0015",
+        "name": "Evade AI Model",
+        "description": "Adversaries can [Craft Adversarial Data](/techniques/AML.T0043) that prevent a AI model from correctly identifying the contents of the data.\nThis technique can be used to evade a downstream task where AI is utilized.\nThe adversary may evade AI based virus/malware detection, or network scanning towards the goal of a traditional cyber attack.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0004",
+          "AML.TA0007",
+          "AML.TA0011"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      },
+      {
+        "id": "AML.T0054",
+        "name": "LLM Jailbreak",
+        "description": "An adversary may use a carefully crafted [LLM Prompt Injection](/techniques/AML.T0051) designed to place LLM in a state in which it will freely respond to any user input, bypassing any controls, restrictions, or guardrails placed on the LLM.\nOnce successfully jailbroken, the LLM can be used in unintended ways by the adversary.\n",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0012",
+          "AML.TA0007"
+        ],
+        "created_date": "2023-10-25",
+        "modified_date": "2023-10-25"
+      },
+      {
+        "id": "AML.T0067",
+        "name": "LLM Trusted Output Components Manipulation",
+        "description": "Adversaries may utilize prompts to a large language model (LLM) which manipulate various components of its response in order to make it appear trustworthy to the user. This helps the adversary continue to operate in the victim's environment and evade detection by the users it interacts with.\n\nThe LLM may be instructed to tailor its language to appear more trustworthy to the user or attempt to manipulate the user to take certain actions. Other response components that could be manipulated include links, recommended follow-up actions, retrieved document metadata, and [Citations](/techniques/AML.T0067.000).",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0007"
+        ],
+        "created_date": "2025-03-12",
+        "modified_date": "2025-03-12"
+      },
+      {
+        "id": "AML.T0068",
+        "name": "LLM Prompt Obfuscation",
+        "description": "Adversaries may hide or otherwise obfuscate prompt injections or retrieval content from the user to avoid detection.\n\nThis may include modifying how the injection is rendered such as small text, text colored the same as the background, or hidden HTML elements.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0007"
+        ],
+        "created_date": "2025-03-12",
+        "modified_date": "2025-03-12"
+      },
+      {
+        "id": "AML.T0071",
+        "name": "False RAG Entry Injection",
+        "description": "Adversaries may introduce false entries into a victim's retrieval augmented generation (RAG) database. Content designed to be interpreted as a document by the large language model (LLM) used in the RAG system is included in a data source being ingested into the RAG database. When RAG entry including the false document is retrieved the, the LLM is tricked into treating part of the retrieved content as a false RAG result. \n\nBy including a false RAG document inside of a regular RAG entry, it bypasses data monitoring tools. It also prevents the document from being deleted directly. \n\nThe adversary may use discovered system keywords to learn how to instruct a particular LLM to treat content as a RAG entry. They may be able to manipulate the injected entry's metadata including document title, author, and creation date.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0007"
+        ],
+        "created_date": "2025-03-12",
+        "modified_date": "2025-03-12"
+      },
+      {
+        "id": "AML.T0073",
+        "name": "Impersonation",
+        "description": "Adversaries may impersonate a trusted person or organization in order to persuade and trick a target into performing some action on their behalf. For example, adversaries may communicate with victims (via [Phishing](/techniques/AML.T0052), or [Spearphishing via Social Engineering LLM](/techniques/AML.T0052.000)) while impersonating a known sender such as an executive, colleague, or third-party vendor. Established trust can then be leveraged to accomplish an adversary's ultimate goals, possibly against multiple victims.\n\nAdversaries may target resources that are part of the AI DevOps lifecycle, such as model repositories, container registries, and software registries.",
+        "object-type": "technique",
+        "ATT&CK-reference": {
+          "id": "T1656",
+          "url": "https://attack.mitre.org/techniques/T1656/"
+        },
+        "tactics": [
+          "AML.TA0007"
+        ],
+        "created_date": "2025-04-14",
+        "modified_date": "2025-04-14"
+      },
+      {
+        "id": "AML.T0074",
+        "name": "Masquerading",
+        "description": "Adversaries may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools. Masquerading occurs when the name or location of an object, legitimate or malicious, is manipulated or abused for the sake of evading defenses and observation. This may include manipulating file metadata, tricking users into misidentifying the file type, and giving legitimate task or service names.",
+        "object-type": "technique",
+        "ATT&CK-reference": {
+          "id": "T1036",
+          "url": "https://attack.mitre.org/techniques/T1036/"
+        },
+        "tactics": [
+          "AML.TA0007"
+        ],
+        "created_date": "2025-04-14",
+        "modified_date": "2025-04-14"
+      },
+      {
+        "id": "AML.T0076",
+        "name": "Corrupt AI Model",
+        "description": "An adversary may purposefully corrupt a malicious AI model file so that it cannot be successfully deserialized in order to evade detection by a model scanner. The corrupt model may still successfully execute malicious code before deserialization fails.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0007"
+        ],
+        "created_date": "2025-04-14",
+        "modified_date": "2025-04-14"
+      }
+    ],
+    "subtechniques": []
+  }
+}

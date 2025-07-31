@@ -1,0 +1,126 @@
+tactic:
+  id: AML.TA0007
+  name: Defense Evasion
+  description: 'The adversary is trying to avoid being detected by AI-enabled security
+    software.
+
+
+    Defense Evasion co...'
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0015
+    name: Evade AI Model
+    description: 'Adversaries can [Craft Adversarial Data](/techniques/AML.T0043)
+      that prevent a AI model from correctly identifying the contents of the data.
+
+      This tech...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0054
+    name: LLM Jailbreak
+    description: An adversary may use a carefully crafted [LLM Prompt Injection](/techniques/AML.T0051)
+      designed to place LLM in a state in which it will freely respon...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0067
+    name: LLM Trusted Output Components Manipulation
+    description: Adversaries may utilize prompts to a large language model (LLM) which
+      manipulate various components of its response in order to make it appear trustwo...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0068
+    name: LLM Prompt Obfuscation
+    description: 'Adversaries may hide or otherwise obfuscate prompt injections or
+      retrieval content from the user to avoid detection.
+
+
+      This may include modifying how t...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0071
+    name: False RAG Entry Injection
+    description: Adversaries may introduce false entries into a victim's retrieval
+      augmented generation (RAG) database. Content designed to be interpreted as a
+      documen...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0073
+    name: Impersonation
+    description: Adversaries may impersonate a trusted person or organization in order
+      to persuade and trick a target into performing some action on their behalf.
+      For ...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0074
+    name: Masquerading
+    description: Adversaries may attempt to manipulate features of their artifacts
+      to make them appear legitimate or benign to users and/or security tools. Masqueradin...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0076
+    name: Corrupt AI Model
+    description: An adversary may purposefully corrupt a malicious AI model file so
+      that it cannot be successfully deserialized in order to evade detection by a
+      model ...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

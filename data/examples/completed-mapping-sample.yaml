@@ -1,0 +1,93 @@
+tactic:
+  id: AML.TA0007
+  name: Defense Evasion
+  description: 'The adversary is trying to avoid being detected by AI-enabled security
+    software.
+
+    Defense Evasion consists of techniques that adversaries use to avoid detection
+    throughout their compromise...'
+mapping_metadata:
+  created_date: '2025-01-15'
+  last_updated: '2025-01-15'
+  mapped_by: 'Security Analyst'
+  review_status: completed
+technique_mappings:
+- technique:
+    id: AML.T0015
+    name: Evade AI Model
+    description: 'Adversaries can craft adversarial data that prevent an AI model 
+      from correctly identifying the contents of the data. This technique can be used 
+      to evade a downstream task where AI is utilized...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent:
+      - AICM-MLG-001  # Model Governance - Adversarial training requirements
+      - AICM-DAT-005  # Data Validation - Input sanitization and filtering
+      - AICM-MOD-003  # Model Security - Robustness testing
+      - AICM-INP-001  # Input Controls - Adversarial detection preprocessing
+    detect:
+      - AICM-MON-007  # Runtime Monitoring - Anomalous input detection
+      - AICM-AUD-004  # Audit Logging - Model decision tracking
+      - AICM-ALR-002  # Alerting - Confidence threshold monitoring
+      - AICM-ANL-001  # Analytics - Behavioral analysis of inputs
+    respond:
+      - AICM-INC-003  # Incident Response - Adversarial attack procedures
+      - AICM-MIT-001  # Mitigation - Input quarantine procedures
+      - AICM-ESC-001  # Escalation - Security team notification
+    recover:
+      - AICM-BCR-002  # Recovery - Model reversion procedures
+      - AICM-UPD-001  # Updates - Adversarial training data incorporation
+      - AICM-TST-003  # Testing - Post-incident validation
+  mapping_notes: |
+    This is a core evasion technique that requires multi-layered defense.
+    Prevention focuses on building robust models, detection on runtime monitoring,
+    response on immediate mitigation, and recovery on model improvement.
+    
+    Key considerations:
+    - Adversarial training is most effective prevention
+    - Runtime detection requires careful threshold tuning
+    - Recovery should include lessons learned integration
+  confidence_level: high
+
+- technique:
+    id: AML.T0054
+    name: LLM Jailbreak
+    description: 'An adversary may use a carefully crafted LLM Prompt Injection 
+      designed to place LLM in a state in which it will freely respond to any 
+      subsequent requests...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent:
+      - AICM-LLM-001  # LLM Security - Prompt filtering and validation
+      - AICM-CNT-002  # Content Controls - Output restriction policies
+      - AICM-TRA-003  # Training - Alignment and safety training
+      - AICM-GRD-001  # Guardrails - System-level constraints
+    detect:
+      - AICM-MON-008  # Monitoring - Jailbreak attempt detection
+      - AICM-NLP-001  # NLP Security - Prompt pattern analysis
+      - AICM-BEH-002  # Behavioral - Response anomaly detection
+    respond:
+      - AICM-BLK-001  # Blocking - Immediate session termination
+      - AICM-LOG-003  # Logging - Comprehensive incident recording
+      - AICM-REP-001  # Reporting - Security team notification
+    recover:
+      - AICM-UPD-002  # Updates - Filter rule enhancement
+      - AICM-TRA-004  # Retraining - Safety alignment improvement
+      - AICM-REV-001  # Review - Policy adjustment procedures
+  mapping_notes: |
+    LLM jailbreaking is an emerging threat requiring specialized controls.
+    Focus on prompt-level protections and behavioral monitoring.
+    
+    Critical aspects:
+    - Multi-layered prompt filtering essential
+    - Real-time behavioral analysis key for detection
+    - Rapid response crucial to limit exposure
+    - Continuous model alignment updates needed
+  confidence_level: high
+
+# Example shows completed mapping with:
+# - Specific AICM control IDs mapped to each technique
+# - Controls categorized by prevention/detection/response/recovery
+# - Detailed mapping notes explaining rationale
+# - Confidence levels for mapping accuracy
+# - Proper metadata tracking

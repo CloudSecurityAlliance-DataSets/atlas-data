@@ -1,0 +1,99 @@
+tactic:
+  id: AML.TA0002
+  name: Reconnaissance
+  description: The adversary is trying to gather information about the AI system they
+    can use to plan future operat...
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0000
+    name: Search Open Technical Databases
+    description: 'Adversaries may search for publicly available research and technical
+      documentation to learn how and where AI is used within a victim organization.
+
+      The...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0001
+    name: Search Open AI Vulnerability Analysis
+    description: Much like the [Search Open Technical Databases](/techniques/AML.T0000),
+      there is often ample research available on the vulnerabilities of common AI
+      mo...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0003
+    name: Search Victim-Owned Websites
+    description: 'Adversaries may search websites owned by the victim for information
+      that can be used during targeting.
+
+      Victim-owned websites may contain technical det...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0004
+    name: Search Application Repositories
+    description: 'Adversaries may search open application repositories during targeting.
+
+      Examples of these include Google Play, the iOS App store, the macOS App Store,
+      ...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0006
+    name: Active Scanning
+    description: 'An adversary may probe or scan the victim system to gather information
+      for targeting.
+
+      This is distinct from other reconnaissance techniques that do no...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0064
+    name: Gather RAG-Indexed Targets
+    description: Adversaries may identify data sources used in retrieval augmented
+      generation (RAG) systems for targeting purposes. By pinpointing these sources,
+      attac...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

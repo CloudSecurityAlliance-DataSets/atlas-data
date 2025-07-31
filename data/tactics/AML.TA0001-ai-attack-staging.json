@@ -1,0 +1,65 @@
+{
+  "tactic": {
+    "id": "AML.TA0001",
+    "name": "AI Attack Staging",
+    "description": "The adversary is leveraging their knowledge of and access to the target system to tailor the attack.\n\nAI Attack Staging consists of techniques adversaries use to prepare their attack on the target AI model.\nTechniques can include training proxy models, poisoning the target model, and crafting adversarial data to feed the target model.\nSome of these techniques can be performed in an offline manner and are thus difficult to mitigate.\nThese techniques are often used to achieve the adversary's end goal.",
+    "object-type": "tactic",
+    "created_date": "2021-05-13",
+    "modified_date": "2025-04-09"
+  },
+  "summary": {
+    "total_techniques": 4,
+    "main_techniques": 4,
+    "subtechniques": 0
+  },
+  "techniques": {
+    "main_techniques": [
+      {
+        "id": "AML.T0005",
+        "name": "Create Proxy AI Model",
+        "description": "Adversaries may obtain models to serve as proxies for the target model in use at the victim organization.\nProxy models are used to simulate complete access to the target model in a fully offline manner.\n\nAdversaries may train models from representative datasets, attempt to replicate models from victim inference APIs, or use available pre-trained models.\n",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0001"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      },
+      {
+        "id": "AML.T0018",
+        "name": "Manipulate AI Model",
+        "description": "Adversaries may directly manipulate an AI model to change its behavior or introduce malicious code. Manipulating a model gives the adversary a persistent change in the system. This can include poisoning the model by changing its weights, modifying the model architecture to change its behavior, and embedding malware which may be executed when the model is loaded.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0006",
+          "AML.TA0001"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-14"
+      },
+      {
+        "id": "AML.T0042",
+        "name": "Verify Attack",
+        "description": "Adversaries can verify the efficacy of their attack via an inference API or access to an offline copy of the target model.\nThis gives the adversary confidence that their approach works and allows them to carry out the attack at a later time of their choosing.\nThe adversary may verify the attack once but use it against many edge devices running copies of the target model.\nThe adversary may verify their attack digitally, then deploy it in the [Physical Environment Access](/techniques/AML.T0041) at a later time.\nVerifying the attack may be hard to detect since the adversary can use a minimal number of queries or an offline copy of the model.\n",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0001"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2021-05-13"
+      },
+      {
+        "id": "AML.T0043",
+        "name": "Craft Adversarial Data",
+        "description": "Adversarial data are inputs to an AI model that have been modified such that they cause the adversary's desired effect in the target model.\nEffects can range from misclassification, to missed detections, to maximizing energy consumption.\nTypically, the modification is constrained in magnitude or location so that a human still perceives the data as if it were unmodified, but human perceptibility may not always be a concern depending on the adversary's intended effect.\nFor example, an adversarial input for an image classification task is an image the AI model would misclassify, but a human would still recognize as containing the correct class.\n\nDepending on the adversary's knowledge of and access to the target model, the adversary may use different classes of algorithms to develop the adversarial example such as [White-Box Optimization](/techniques/AML.T0043.000), [Black-Box Optimization](/techniques/AML.T0043.001), [Black-Box Transfer](/techniques/AML.T0043.002), or [Manual Modification](/techniques/AML.T0043.003).\n\nThe adversary may [Verify Attack](/techniques/AML.T0042) their approach works if they have white-box or inference API access to the model.\nThis allows the adversary to gain confidence their attack is effective \"live\" environment where their attack may be noticed.\nThey can then use the attack at a later time to accomplish their goals.\nAn adversary may optimize adversarial examples for [Evade AI Model](/techniques/AML.T0015), or to [Erode AI Model Integrity](/techniques/AML.T0031).",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0001"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      }
+    ],
+    "subtechniques": []
+  }
+}

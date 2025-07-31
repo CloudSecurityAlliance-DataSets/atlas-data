@@ -1,0 +1,77 @@
+{
+  "tactic": {
+    "id": "AML.TA0005",
+    "name": "Execution",
+    "description": "The adversary is trying to run malicious code embedded in AI artifacts or software.\n\nExecution consists of techniques that result in adversary-controlled code running on a local or remote system.\nTechniques that run malicious code are often paired with techniques from all other tactics to achieve broader goals, like exploring a network or stealing data.\nFor example, an adversary might use a remote access tool to run a PowerShell script that does [Remote System Discovery](https://attack.mitre.org/techniques/T1018/).",
+    "object-type": "tactic",
+    "created_date": "2022-01-24",
+    "modified_date": "2025-04-09",
+    "ATT&CK-reference": {
+      "id": "TA0002",
+      "url": "https://attack.mitre.org/tactics/TA0002/"
+    }
+  },
+  "summary": {
+    "total_techniques": 4,
+    "main_techniques": 4,
+    "subtechniques": 0
+  },
+  "techniques": {
+    "main_techniques": [
+      {
+        "id": "AML.T0011",
+        "name": "User Execution",
+        "description": "An adversary may rely upon specific actions by a user in order to gain execution.\nUsers may inadvertently execute unsafe code introduced via [AI Supply Chain Compromise](/techniques/AML.T0010).\nUsers may be subjected to social engineering to get them to execute malicious code by, for example, opening a malicious document file or link.\n",
+        "object-type": "technique",
+        "ATT&CK-reference": {
+          "id": "T1204",
+          "url": "https://attack.mitre.org/techniques/T1204/"
+        },
+        "tactics": [
+          "AML.TA0005"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2023-01-18"
+      },
+      {
+        "id": "AML.T0050",
+        "name": "Command and Scripting Interpreter",
+        "description": "Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries. These interfaces and languages provide ways of interacting with computer systems and are a common feature across many different platforms. Most systems come with some built-in command-line interface and scripting capabilities, for example, macOS and Linux distributions include some flavor of Unix Shell while Windows installations include the Windows Command Shell and PowerShell.\n\nThere are also cross-platform interpreters such as Python, as well as those commonly associated with client applications such as JavaScript and Visual Basic.\n\nAdversaries may abuse these technologies in various ways as a means of executing arbitrary commands. Commands and scripts can be embedded in Initial Access payloads delivered to victims as lure documents or as secondary payloads downloaded from an existing C2. Adversaries may also execute commands through interactive terminals/shells, as well as utilize various Remote Services in order to achieve remote Execution.\n",
+        "object-type": "technique",
+        "ATT&CK-reference": {
+          "id": "T1059",
+          "url": "https://attack.mitre.org/techniques/T1059/"
+        },
+        "tactics": [
+          "AML.TA0005"
+        ],
+        "created_date": "2023-02-28",
+        "modified_date": "2023-10-12"
+      },
+      {
+        "id": "AML.T0051",
+        "name": "LLM Prompt Injection",
+        "description": "An adversary may craft malicious prompts as inputs to an LLM that cause the LLM to act in unintended ways.\nThese \"prompt injections\" are often designed to cause the model to ignore aspects of its original instructions and follow the adversary's instructions instead.\n\nPrompt Injections can be an initial access vector to the LLM that provides the adversary with a foothold to carry out other steps in their operation.\nThey may be designed to bypass defenses in the LLM, or allow the adversary to issue privileged commands.\nThe effects of a prompt injection can persist throughout an interactive session with an LLM.\n\nMalicious prompts may be injected directly by the adversary ([Direct](/techniques/AML.T0051.000)) either to leverage the LLM to generate harmful content or to gain a foothold on the system and lead to further effects.\nPrompts may also be injected indirectly when as part of its normal operation the LLM ingests the malicious prompt from another data source ([Indirect](/techniques/AML.T0051.001)). This type of injection can be used by the adversary to a foothold on the system or to target the user of the LLM.\n",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0005"
+        ],
+        "created_date": "2023-10-25",
+        "modified_date": "2025-03-12"
+      },
+      {
+        "id": "AML.T0053",
+        "name": "LLM Plugin Compromise",
+        "description": "Adversaries may use their access to an LLM that is part of a larger system to compromise connected plugins.\nLLMs are often connected to other services or resources via plugins to increase their capabilities.\nPlugins may include integrations with other applications, access to public or private data sources, and the ability to execute code.\n\nThis may allow adversaries to execute API calls to integrated applications or plugins, providing the adversary with increased privileges on the system.\nAdversaries may take advantage of connected data sources to retrieve sensitive information.\nThey may also use an LLM integrated with a command or script interpreter to execute arbitrary instructions.\n",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0005",
+          "AML.TA0012"
+        ],
+        "created_date": "2023-10-25",
+        "modified_date": "2023-10-25"
+      }
+    ],
+    "subtechniques": []
+  }
+}

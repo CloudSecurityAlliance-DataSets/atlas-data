@@ -1,0 +1,102 @@
+{
+  "tactic": {
+    "id": "AML.TA0002",
+    "name": "Reconnaissance",
+    "description": "The adversary is trying to gather information about the AI system they can use to plan future operations.\n\nReconnaissance consists of techniques that involve adversaries actively or passively gathering information that can be used to support targeting.\nSuch information may include details of the victim organizations' AI capabilities and research efforts.\nThis information can be leveraged by the adversary to aid in other phases of the adversary lifecycle, such as using gathered information to obtain relevant AI artifacts, targeting AI capabilities used by the victim, tailoring attacks to the particular models used by the victim, or to drive and lead further Reconnaissance efforts.",
+    "object-type": "tactic",
+    "created_date": "2022-01-24",
+    "modified_date": "2025-04-09",
+    "ATT&CK-reference": {
+      "id": "TA0043",
+      "url": "https://attack.mitre.org/tactics/TA0043/"
+    }
+  },
+  "summary": {
+    "total_techniques": 6,
+    "main_techniques": 6,
+    "subtechniques": 0
+  },
+  "techniques": {
+    "main_techniques": [
+      {
+        "id": "AML.T0000",
+        "name": "Search Open Technical Databases",
+        "description": "Adversaries may search for publicly available research and technical documentation to learn how and where AI is used within a victim organization.\nThe adversary can use this information to identify targets for attack, or to tailor an existing attack to make it more effective.\nOrganizations often use open source model architectures trained on additional proprietary data in production.\nKnowledge of this underlying architecture allows the adversary to craft more realistic proxy models ([Create Proxy AI Model](/techniques/AML.T0005)).\nAn adversary can search these resources for publications for authors employed at the victim organization.\n\nResearch and technical materials may exist as academic papers published in [Journals and Conference Proceedings](/techniques/AML.T0000.000), or stored in [Pre-Print Repositories](/techniques/AML.T0000.001), as well as [Technical Blogs](/techniques/AML.T0000.002).",
+        "object-type": "technique",
+        "ATT&CK-reference": {
+          "id": "T1596",
+          "url": "https://attack.mitre.org/techniques/T1596/"
+        },
+        "tactics": [
+          "AML.TA0002"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      },
+      {
+        "id": "AML.T0001",
+        "name": "Search Open AI Vulnerability Analysis",
+        "description": "Much like the [Search Open Technical Databases](/techniques/AML.T0000), there is often ample research available on the vulnerabilities of common AI models. Once a target has been identified, an adversary will likely try to identify any pre-existing work that has been done for this class of models.\nThis will include not only reading academic papers that may identify the particulars of a successful attack, but also identifying pre-existing implementations of those attacks. The adversary may obtain [Adversarial AI Attack Implementations](/techniques/AML.T0016.000) or develop their own [Adversarial AI Attacks](/techniques/AML.T0017.000) if necessary.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0002"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-17"
+      },
+      {
+        "id": "AML.T0003",
+        "name": "Search Victim-Owned Websites",
+        "description": "Adversaries may search websites owned by the victim for information that can be used during targeting.\nVictim-owned websites may contain technical details about their AI-enabled products or services.\nVictim-owned websites may contain a variety of details, including names of departments/divisions, physical locations, and data about key employees such as names, roles, and contact info.\nThese sites may also have details highlighting business operations and relationships.\n\nAdversaries may search victim-owned websites to gather actionable information.\nThis information may help adversaries tailor their attacks (e.g. [Adversarial AI Attacks](/techniques/AML.T0017.000) or [Manual Modification](/techniques/AML.T0043.003)).\nInformation from these sources may reveal opportunities for other forms of reconnaissance (e.g. [Search Open Technical Databases](/techniques/AML.T0000) or [Search Open AI Vulnerability Analysis](/techniques/AML.T0001))",
+        "object-type": "technique",
+        "ATT&CK-reference": {
+          "id": "T1594",
+          "url": "https://attack.mitre.org/techniques/T1594/"
+        },
+        "tactics": [
+          "AML.TA0002"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      },
+      {
+        "id": "AML.T0004",
+        "name": "Search Application Repositories",
+        "description": "Adversaries may search open application repositories during targeting.\nExamples of these include Google Play, the iOS App store, the macOS App Store, and the Microsoft Store.\n\nAdversaries may craft search queries seeking applications that contain a AI-enabled components.\nFrequently, the next step is to [Acquire Public AI Artifacts](/techniques/AML.T0002).",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0002"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      },
+      {
+        "id": "AML.T0006",
+        "name": "Active Scanning",
+        "description": "An adversary may probe or scan the victim system to gather information for targeting.\nThis is distinct from other reconnaissance techniques that do not involve direct interaction with the victim system.\n",
+        "object-type": "technique",
+        "ATT&CK-reference": {
+          "id": "T1595",
+          "url": "https://attack.mitre.org/techniques/T1595/"
+        },
+        "tactics": [
+          "AML.TA0002"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2023-01-18"
+      },
+      {
+        "id": "AML.T0064",
+        "name": "Gather RAG-Indexed Targets",
+        "description": "Adversaries may identify data sources used in retrieval augmented generation (RAG) systems for targeting purposes. By pinpointing these sources, attackers can focus on poisoning or otherwise manipulating the external data repositories the AI relies on.\n\nRAG-indexed data may be identified in public documentation about the system, or by interacting with the system directly and observing any indications of or references to external data sources.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0002"
+        ],
+        "created_date": "2025-03-12",
+        "modified_date": "2025-03-12"
+      }
+    ],
+    "subtechniques": []
+  }
+}

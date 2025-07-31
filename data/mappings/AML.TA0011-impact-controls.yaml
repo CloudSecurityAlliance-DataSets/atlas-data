@@ -1,0 +1,113 @@
+tactic:
+  id: AML.TA0011
+  name: Impact
+  description: The adversary is trying to manipulate, interrupt, erode confidence
+    in, or destroy your AI systems an...
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0015
+    name: Evade AI Model
+    description: 'Adversaries can [Craft Adversarial Data](/techniques/AML.T0043)
+      that prevent a AI model from correctly identifying the contents of the data.
+
+      This tech...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0029
+    name: Denial of AI Service
+    description: 'Adversaries may target AI-enabled systems with a flood of requests
+      for the purpose of degrading or shutting down the service.
+
+      Since many AI systems re...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0031
+    name: Erode AI Model Integrity
+    description: 'Adversaries may degrade the target model''s performance with adversarial
+      data inputs to erode confidence in the system over time.
+
+      This can lead to the ...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0034
+    name: Cost Harvesting
+    description: Adversaries may target different AI services to send useless queries
+      or computationally expensive inputs to increase the cost of running services
+      at t...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0046
+    name: Spamming AI System with Chaff Data
+    description: 'Adversaries may spam the AI system with chaff data that causes increase
+      in the number of detections.
+
+      This can cause analysts at the victim organizatio...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0048
+    name: External Harms
+    description: Adversaries may abuse their access to a victim system and use its
+      resources or capabilities to further their goals by causing harms external to
+      that s...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0059
+    name: Erode Dataset Integrity
+    description: Adversaries may poison or manipulate portions of a dataset to reduce
+      its usefulness, reduce trust, and cause users to waste resources correcting
+      error...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

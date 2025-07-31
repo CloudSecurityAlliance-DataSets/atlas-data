@@ -1,0 +1,68 @@
+tactic:
+  id: AML.TA0006
+  name: Persistence
+  description: 'The adversary is trying to maintain their foothold via AI artifacts
+    or software.
+
+
+    Persistence consis...'
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0018
+    name: Manipulate AI Model
+    description: Adversaries may directly manipulate an AI model to change its behavior
+      or introduce malicious code. Manipulating a model gives the adversary a persist...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0020
+    name: Poison Training Data
+    description: 'Adversaries may attempt to poison datasets used by an AI model by
+      modifying the underlying data or its labels.
+
+      This allows the adversary to embed vuln...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0061
+    name: LLM Prompt Self-Replication
+    description: An adversary may use a carefully crafted [LLM Prompt Injection](/techniques/AML.T0051)
+      designed to cause the LLM to replicate the prompt as part of it...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0070
+    name: RAG Poisoning
+    description: Adversaries may inject malicious content into data indexed by a retrieval
+      augmented generation (RAG) system to contaminate a future thread through RAG...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

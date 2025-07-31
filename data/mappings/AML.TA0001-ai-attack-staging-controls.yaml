@@ -1,0 +1,69 @@
+tactic:
+  id: AML.TA0001
+  name: AI Attack Staging
+  description: The adversary is leveraging their knowledge of and access to the target
+    system to tailor the attack....
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0005
+    name: Create Proxy AI Model
+    description: 'Adversaries may obtain models to serve as proxies for the target
+      model in use at the victim organization.
+
+      Proxy models are used to simulate complete a...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0018
+    name: Manipulate AI Model
+    description: Adversaries may directly manipulate an AI model to change its behavior
+      or introduce malicious code. Manipulating a model gives the adversary a persist...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0042
+    name: Verify Attack
+    description: 'Adversaries can verify the efficacy of their attack via an inference
+      API or access to an offline copy of the target model.
+
+      This gives the adversary co...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0043
+    name: Craft Adversarial Data
+    description: 'Adversarial data are inputs to an AI model that have been modified
+      such that they cause the adversary''s desired effect in the target model.
+
+      Effects ca...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

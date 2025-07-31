@@ -1,0 +1,30 @@
+tactic:
+  id: AML.TA0014
+  name: Command and Control
+  description: 'The adversary is trying to communicate with compromised AI systems
+    to control them.
+
+
+    Command and Con...'
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0072
+    name: Reverse Shell
+    description: 'Adversaries may utilize a reverse shell to communicate and control
+      the victim system.
+
+
+      Typically, a user uses a client to connect to a remote machine ...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

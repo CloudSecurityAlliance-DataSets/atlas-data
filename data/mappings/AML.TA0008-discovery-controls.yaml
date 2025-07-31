@@ -1,0 +1,114 @@
+tactic:
+  id: AML.TA0008
+  name: Discovery
+  description: 'The adversary is trying to figure out your AI environment.
+
+
+    Discovery consists of techniques an adve...'
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0007
+    name: Discover AI Artifacts
+    description: 'Adversaries may search private sources to identify AI learning artifacts
+      that exist on the system and gather information about them.
+
+      These artifacts c...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0013
+    name: Discover AI Model Ontology
+    description: 'Adversaries may discover the ontology of an AI model''s output space,
+      for example, the types of objects a model can detect.
+
+      The adversary may discovery...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0014
+    name: Discover AI Model Family
+    description: 'Adversaries may discover the general family of model.
+
+      General information about the model may be revealed in documentation, or the
+      adversary may use c...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0062
+    name: Discover LLM Hallucinations
+    description: 'Adversaries may prompt large language models and identify hallucinated
+      entities.
+
+      They may request software packages, commands, URLs, organization name...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0063
+    name: Discover AI Model Outputs
+    description: Adversaries may discover model outputs, such as class scores, whose
+      presence is not required for the system to function and are not intended for
+      use b...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0069
+    name: Discover LLM System Information
+    description: The adversary is trying to discover something about the large language
+      model's (LLM) system information. This may be found in a configuration file
+      con...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0075
+    name: Cloud Service Discovery
+    description: An adversary may attempt to enumerate the cloud services running
+      on a system after gaining access. These methods can differ from platform-as-a-service...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

@@ -1,0 +1,91 @@
+tactic:
+  id: AML.TA0006
+  name: Persistence
+  description: 'The adversary is trying to maintain their foothold via AI artifacts
+    or software.
+
+
+    Persistence consists of techniques that adversaries use to keep access to systems
+    across restarts, changed credentials, and other interruptions that could cut off
+    their access.
+
+    Techniques used for persistence often involve leaving behind modified ML artifacts
+    such as poisoned training data or manipulated AI models.'
+  object-type: tactic
+  created_date: 2022-01-24
+  modified_date: 2025-04-09
+  ATT&CK-reference:
+    id: TA0003
+    url: https://attack.mitre.org/tactics/TA0003/
+summary:
+  total_techniques: 4
+  main_techniques: 4
+  subtechniques: 0
+techniques:
+  main_techniques:
+  - id: AML.T0018
+    name: Manipulate AI Model
+    description: Adversaries may directly manipulate an AI model to change its behavior
+      or introduce malicious code. Manipulating a model gives the adversary a persistent
+      change in the system. This can include poisoning the model by changing its weights,
+      modifying the model architecture to change its behavior, and embedding malware
+      which may be executed when the model is loaded.
+    object-type: technique
+    tactics:
+    - AML.TA0006
+    - AML.TA0001
+    created_date: 2021-05-13
+    modified_date: 2025-04-14
+  - id: AML.T0020
+    name: Poison Training Data
+    description: 'Adversaries may attempt to poison datasets used by an AI model by
+      modifying the underlying data or its labels.
+
+      This allows the adversary to embed vulnerabilities in AI models trained on the
+      data that may not be easily detectable.
+
+      Data poisoning attacks may or may not require modifying the labels.
+
+      The embedded vulnerability is activated at a later time by data samples with
+      an [Insert Backdoor Trigger](/techniques/AML.T0043.004)
+
+
+      Poisoned data can be introduced via [AI Supply Chain Compromise](/techniques/AML.T0010)
+      or the data may be poisoned after the adversary gains [Initial Access](/tactics/AML.TA0004)
+      to the system.'
+    object-type: technique
+    tactics:
+    - AML.TA0003
+    - AML.TA0006
+    created_date: 2021-05-13
+    modified_date: 2025-04-09
+  - id: AML.T0061
+    name: LLM Prompt Self-Replication
+    description: 'An adversary may use a carefully crafted [LLM Prompt Injection](/techniques/AML.T0051)
+      designed to cause the LLM to replicate the prompt as part of its output. This
+      allows the prompt to propagate to other LLMs and persist on the system. The
+      self-replicating prompt is typically paired with other malicious instructions
+      (ex: [LLM Jailbreak](/techniques/AML.T0054), [LLM Data Leakage](/techniques/AML.T0057)).'
+    object-type: technique
+    tactics:
+    - AML.TA0006
+    created_date: 2025-03-12
+    modified_date: 2025-03-12
+  - id: AML.T0070
+    name: RAG Poisoning
+    description: 'Adversaries may inject malicious content into data indexed by a
+      retrieval augmented generation (RAG) system to contaminate a future thread through
+      RAG-based search results. This may be accomplished by placing manipulated documents
+      in a location the RAG indexes (see [Gather RAG-Indexed Targets](/techniques/AML.T0064)).
+
+
+      The content may be targeted such that it would always surface as a search result
+      for a specific user query. The adversary''s content may include false or misleading
+      information. It may also include prompt injections with malicious instructions,
+      or false RAG entries.'
+    object-type: technique
+    tactics:
+    - AML.TA0006
+    created_date: 2025-03-12
+    modified_date: 2025-03-12
+  subtechniques: []

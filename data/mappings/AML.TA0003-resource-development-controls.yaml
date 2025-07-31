@@ -1,0 +1,183 @@
+tactic:
+  id: AML.TA0003
+  name: Resource Development
+  description: 'The adversary is trying to establish resources they can use to support
+    operations.
+
+
+    Resource Develop...'
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0002
+    name: Acquire Public AI Artifacts
+    description: 'Adversaries may search public sources, including cloud storage,
+      public-facing services, and software or data repositories, to identify AI artifacts.
+
+      T...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0008
+    name: Acquire Infrastructure
+    description: 'Adversaries may buy, lease, or rent infrastructure for use throughout
+      their operation.
+
+      A wide variety of infrastructure exists for hosting and orchest...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0016
+    name: Obtain Capabilities
+    description: 'Adversaries may search for and obtain software capabilities for
+      use in their operations.
+
+      Capabilities may be specific to AI-based attacks [Adversarial...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0017
+    name: Develop Capabilities
+    description: Adversaries may develop their own capabilities to support operations.
+      This process encompasses identifying requirements, building solutions, and deplo...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0019
+    name: Publish Poisoned Datasets
+    description: 'Adversaries may [Poison Training Data](/techniques/AML.T0020) and
+      publish it to a public location.
+
+      The poisoned dataset may be a novel dataset or a po...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0020
+    name: Poison Training Data
+    description: 'Adversaries may attempt to poison datasets used by an AI model by
+      modifying the underlying data or its labels.
+
+      This allows the adversary to embed vuln...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0021
+    name: Establish Accounts
+    description: Adversaries may create accounts with various services for use in
+      targeting, to gain access to resources needed in [AI Attack Staging](/tactics/AML.TA0...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0058
+    name: Publish Poisoned Models
+    description: Adversaries may publish a poisoned model to a public location such
+      as a model registry or code repository. The poisoned model may be a novel model
+      or ...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0060
+    name: Publish Hallucinated Entities
+    description: Adversaries may create an entity they control, such as a software
+      package, website, or email address to a source hallucinated by an LLM. The hallucina...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0065
+    name: LLM Prompt Crafting
+    description: Adversaries may use their acquired knowledge of the target generative
+      AI system to craft prompts that bypass its defenses and allow malicious instruct...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0066
+    name: Retrieval Content Crafting
+    description: Adversaries may write content designed to be retrieved by user queries
+      and influence a user of the system in some way. This abuses the trust the user
+      ...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0079
+    name: Stage Capabilities
+    description: Adversaries may upload, install, or otherwise set up capabilities
+      that can be used during targeting. To support their operations, an adversary
+      may nee...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

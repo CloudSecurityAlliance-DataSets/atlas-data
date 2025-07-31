@@ -1,0 +1,105 @@
+{
+  "tactic": {
+    "id": "AML.TA0008",
+    "name": "Discovery",
+    "description": "The adversary is trying to figure out your AI environment.\n\nDiscovery consists of techniques an adversary may use to gain knowledge about the system and internal network.\nThese techniques help adversaries observe the environment and orient themselves before deciding how to act.\nThey also allow adversaries to explore what they can control and what's around their entry point in order to discover how it could benefit their current objective.\nNative operating system tools are often used toward this post-compromise information-gathering objective.",
+    "object-type": "tactic",
+    "created_date": "2022-01-24",
+    "modified_date": "2025-04-09",
+    "ATT&CK-reference": {
+      "id": "TA0007",
+      "url": "https://attack.mitre.org/tactics/TA0007/"
+    }
+  },
+  "summary": {
+    "total_techniques": 7,
+    "main_techniques": 7,
+    "subtechniques": 0
+  },
+  "techniques": {
+    "main_techniques": [
+      {
+        "id": "AML.T0007",
+        "name": "Discover AI Artifacts",
+        "description": "Adversaries may search private sources to identify AI learning artifacts that exist on the system and gather information about them.\nThese artifacts can include the software stack used to train and deploy models, training and testing data management systems, container registries, software repositories, and model zoos.\n\nThis information can be used to identify targets for further collection, exfiltration, or disruption, and to tailor and improve attacks.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0008"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      },
+      {
+        "id": "AML.T0013",
+        "name": "Discover AI Model Ontology",
+        "description": "Adversaries may discover the ontology of an AI model's output space, for example, the types of objects a model can detect.\nThe adversary may discovery the ontology by repeated queries to the model, forcing it to enumerate its output space.\nOr the ontology may be discovered in a configuration file or in documentation about the model.\n\nThe model ontology helps the adversary understand how the model is being used by the victim.\nIt is useful to the adversary in creating targeted attacks.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0008"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      },
+      {
+        "id": "AML.T0014",
+        "name": "Discover AI Model Family",
+        "description": "Adversaries may discover the general family of model.\nGeneral information about the model may be revealed in documentation, or the adversary may use carefully constructed examples and analyze the model's responses to categorize it.\n\nKnowledge of the model family can help the adversary identify means of attacking the model and help tailor the attack.\n",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0008"
+        ],
+        "created_date": "2021-05-13",
+        "modified_date": "2025-04-09"
+      },
+      {
+        "id": "AML.T0062",
+        "name": "Discover LLM Hallucinations",
+        "description": "Adversaries may prompt large language models and identify hallucinated entities.\nThey may request software packages, commands, URLs, organization names, or e-mail addresses, and identify hallucinations with no connected real-world source. Discovered hallucinations provide the adversary with potential targets to [Publish Hallucinated Entities](/techniques/AML.T0060). Different LLMs have been shown to produce the same hallucinations, so the hallucinations exploited by an adversary may affect users of other LLMs.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0008"
+        ],
+        "created_date": "2025-03-12",
+        "modified_date": "2025-03-12"
+      },
+      {
+        "id": "AML.T0063",
+        "name": "Discover AI Model Outputs",
+        "description": "Adversaries may discover model outputs, such as class scores, whose presence is not required for the system to function and are not intended for use by the end user. Model outputs may be found in logs or may be included in API responses.\nModel outputs may enable the adversary to identify weaknesses in the model and develop attacks.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0008"
+        ],
+        "created_date": "2025-03-12",
+        "modified_date": "2025-03-12"
+      },
+      {
+        "id": "AML.T0069",
+        "name": "Discover LLM System Information",
+        "description": "The adversary is trying to discover something about the large language model's (LLM) system information. This may be found in a configuration file containing the system instructions or extracted via interactions with the LLM. The desired information may include the full system prompt, special characters that have significance to the LLM or keywords indicating functionality available to the LLM. Information about how the LLM is instructed can be used by the adversary to understand the system's capabilities and to aid them in crafting malicious prompts.",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0008"
+        ],
+        "created_date": "2025-03-12",
+        "modified_date": "2025-03-12"
+      },
+      {
+        "id": "AML.T0075",
+        "name": "Cloud Service Discovery",
+        "description": "An adversary may attempt to enumerate the cloud services running on a system after gaining access. These methods can differ from platform-as-a-service (PaaS), to infrastructure-as-a-service (IaaS), or software-as-a-service (SaaS). Many services exist throughout the various cloud providers and can include Continuous Integration and Continuous Delivery (CI/CD), Lambda Functions, Entra ID, etc. They may also include security services, such as AWS GuardDuty and Microsoft Defender for Cloud, and logging services, such as AWS CloudTrail and Google Cloud Audit Logs.\n\nAdversaries may attempt to discover information about the services enabled throughout the environment. Azure tools and APIs, such as the Microsoft Graph API and Azure Resource Manager API, can enumerate resources and services, including applications, management groups, resources and policy definitions, and their relationships that are accessible by an identity.[1][2]\n\nFor example, Stormspotter is an open source tool for enumerating and constructing a graph for Azure resources and services, and Pacu is an open source AWS exploitation framework that supports several methods for discovering cloud services.[3][4]\n\nAdversaries may use the information gained to shape follow-on behaviors, such as targeting data or credentials from enumerated services or evading identified defenses through Disable or Modify Tools or Disable or Modify Cloud Logs.",
+        "object-type": "technique",
+        "ATT&CK-reference": {
+          "id": "T1526",
+          "url": "https://attack.mitre.org/techniques/T1526/"
+        },
+        "tactics": [
+          "AML.TA0008"
+        ],
+        "created_date": "2025-04-14",
+        "modified_date": "2025-04-14"
+      }
+    ],
+    "subtechniques": []
+  }
+}

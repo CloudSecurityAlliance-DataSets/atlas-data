@@ -1,0 +1,48 @@
+{
+  "tactic": {
+    "id": "AML.TA0012",
+    "name": "Privilege Escalation",
+    "description": "The adversary is trying to gain higher-level permissions.\n\nPrivilege Escalation consists of techniques that adversaries use to gain higher-level permissions on a system or network. Adversaries can often enter and explore a network with unprivileged access but require elevated permissions to follow through on their objectives. Common approaches are to take advantage of system weaknesses, misconfigurations, and vulnerabilities. Examples of elevated access include:\n- SYSTEM/root level\n- local administrator\n- user account with admin-like access\n- user accounts with access to specific system or perform specific function\n\nThese techniques often overlap with Persistence techniques, as OS features that let an adversary persist can execute in an elevated context.\n",
+    "object-type": "tactic",
+    "created_date": "2023-10-25",
+    "modified_date": "2023-10-25",
+    "ATT&CK-reference": {
+      "id": "TA0004",
+      "url": "https://attack.mitre.org/tactics/TA0004/"
+    }
+  },
+  "summary": {
+    "total_techniques": 2,
+    "main_techniques": 2,
+    "subtechniques": 0
+  },
+  "techniques": {
+    "main_techniques": [
+      {
+        "id": "AML.T0053",
+        "name": "LLM Plugin Compromise",
+        "description": "Adversaries may use their access to an LLM that is part of a larger system to compromise connected plugins.\nLLMs are often connected to other services or resources via plugins to increase their capabilities.\nPlugins may include integrations with other applications, access to public or private data sources, and the ability to execute code.\n\nThis may allow adversaries to execute API calls to integrated applications or plugins, providing the adversary with increased privileges on the system.\nAdversaries may take advantage of connected data sources to retrieve sensitive information.\nThey may also use an LLM integrated with a command or script interpreter to execute arbitrary instructions.\n",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0005",
+          "AML.TA0012"
+        ],
+        "created_date": "2023-10-25",
+        "modified_date": "2023-10-25"
+      },
+      {
+        "id": "AML.T0054",
+        "name": "LLM Jailbreak",
+        "description": "An adversary may use a carefully crafted [LLM Prompt Injection](/techniques/AML.T0051) designed to place LLM in a state in which it will freely respond to any user input, bypassing any controls, restrictions, or guardrails placed on the LLM.\nOnce successfully jailbroken, the LLM can be used in unintended ways by the adversary.\n",
+        "object-type": "technique",
+        "tactics": [
+          "AML.TA0012",
+          "AML.TA0007"
+        ],
+        "created_date": "2023-10-25",
+        "modified_date": "2023-10-25"
+      }
+    ],
+    "subtechniques": []
+  }
+}

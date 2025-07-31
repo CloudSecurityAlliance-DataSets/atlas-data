@@ -1,0 +1,97 @@
+tactic:
+  id: AML.TA0004
+  name: Initial Access
+  description: 'The adversary is trying to gain access to the AI system.
+
+
+    The target system could be a network, mobi...'
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0010
+    name: AI Supply Chain Compromise
+    description: 'Adversaries may gain initial access to a system by compromising
+      the unique portions of the AI supply chain.
+
+      This could include [Hardware](/techniques/...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0012
+    name: Valid Accounts
+    description: 'Adversaries may obtain and abuse credentials of existing accounts
+      as a means of gaining Initial Access.
+
+      Credentials may take the form of usernames and...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0015
+    name: Evade AI Model
+    description: 'Adversaries can [Craft Adversarial Data](/techniques/AML.T0043)
+      that prevent a AI model from correctly identifying the contents of the data.
+
+      This tech...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0049
+    name: Exploit Public-Facing Application
+    description: Adversaries may attempt to take advantage of a weakness in an Internet-facing
+      computer or program using software, data, or commands in order to cause ...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0052
+    name: Phishing
+    description: Adversaries may send phishing messages to gain access to victim systems.
+      All forms of phishing are electronically delivered social engineering. Phishi...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0078
+    name: Drive-by Compromise
+    description: Adversaries may gain access to an AI system through a user visiting
+      a website over the normal course of browsing, or an AI agent retrieving informatio...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

@@ -1,0 +1,74 @@
+tactic:
+  id: AML.TA0000
+  name: AI Model Access
+  description: 'The adversary is attempting to gain some level of access to an AI
+    model.
+
+
+    AI Model Access enables te...'
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0040
+    name: AI Model Inference API Access
+    description: 'Adversaries may gain access to a model via legitimate access to
+      the inference API.
+
+      Inference API access can be a source of information to the adversar...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0041
+    name: Physical Environment Access
+    description: 'In addition to the attacks that take place purely in the digital
+      domain, adversaries may also exploit the physical environment for their attacks.
+
+      If t...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0044
+    name: Full AI Model Access
+    description: 'Adversaries may gain full "white-box" access to an AI model.
+
+      This means the adversary has complete knowledge of the model architecture, its
+      parameters...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0047
+    name: AI-Enabled Product or Service
+    description: 'Adversaries may use a product or service that uses artificial intelligence
+      under the hood to gain access to the underlying AI model.
+
+      This type of indi...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

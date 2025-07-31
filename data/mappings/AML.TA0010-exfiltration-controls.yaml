@@ -1,0 +1,90 @@
+tactic:
+  id: AML.TA0010
+  name: Exfiltration
+  description: 'The adversary is trying to steal AI artifacts or other information
+    about the AI system.
+
+
+    Exfiltratio...'
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0024
+    name: Exfiltration via AI Inference API
+    description: 'Adversaries may exfiltrate private information via [AI Model Inference
+      API Access](/techniques/AML.T0040).
+
+      AI Models have been shown leak private info...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0025
+    name: Exfiltration via Cyber Means
+    description: 'Adversaries may exfiltrate AI artifacts or other information relevant
+      to their goals via traditional cyber means.
+
+
+      See the ATT&CK [Exfiltration](https...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0056
+    name: Extract LLM System Prompt
+    description: Adversaries may attempt to extract a large language model's (LLM)
+      system prompt. This can be done via prompt injection to induce the model to
+      reveal i...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0057
+    name: LLM Data Leakage
+    description: 'Adversaries may craft prompts that induce the LLM to leak sensitive
+      information.
+
+      This can include private user data or proprietary information.
+
+      The le...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0077
+    name: LLM Response Rendering
+    description: An adversary may get a large language model (LLM) to respond with
+      private information that is hidden from the user when the response is rendered
+      by th...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

@@ -1,0 +1,41 @@
+tactic:
+  id: AML.TA0012
+  name: Privilege Escalation
+  description: 'The adversary is trying to gain higher-level permissions.
+
+
+    Privilege Escalation consists of techniqu...'
+mapping_metadata:
+  created_date: null
+  last_updated: null
+  mapped_by: null
+  review_status: pending
+technique_mappings:
+- technique:
+    id: AML.T0053
+    name: LLM Plugin Compromise
+    description: 'Adversaries may use their access to an LLM that is part of a larger
+      system to compromise connected plugins.
+
+      LLMs are often connected to other services...'
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low
+- technique:
+    id: AML.T0054
+    name: LLM Jailbreak
+    description: An adversary may use a carefully crafted [LLM Prompt Injection](/techniques/AML.T0051)
+      designed to place LLM in a state in which it will freely respon...
+    is_subtechnique: false
+  aicm_controls:
+    prevent: []
+    detect: []
+    respond: []
+    recover: []
+  mapping_notes: ''
+  confidence_level: low

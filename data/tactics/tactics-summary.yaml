@@ -1,0 +1,64 @@
+atlas_version: 4.9.0
+total_tactics: 15
+total_techniques: 115
+tactics_summary:
+- id: AML.TA0002
+  name: Reconnaissance
+  technique_count: 6
+  filename: AML.TA0002-reconnaissance
+- id: AML.TA0003
+  name: Resource Development
+  technique_count: 12
+  filename: AML.TA0003-resource-development
+- id: AML.TA0004
+  name: Initial Access
+  technique_count: 6
+  filename: AML.TA0004-initial-access
+- id: AML.TA0000
+  name: AI Model Access
+  technique_count: 4
+  filename: AML.TA0000-ai-model-access
+- id: AML.TA0005
+  name: Execution
+  technique_count: 4
+  filename: AML.TA0005-execution
+- id: AML.TA0006
+  name: Persistence
+  technique_count: 4
+  filename: AML.TA0006-persistence
+- id: AML.TA0012
+  name: Privilege Escalation
+  technique_count: 2
+  filename: AML.TA0012-privilege-escalation
+- id: AML.TA0007
+  name: Defense Evasion
+  technique_count: 8
+  filename: AML.TA0007-defense-evasion
+- id: AML.TA0013
+  name: Credential Access
+  technique_count: 1
+  filename: AML.TA0013-credential-access
+- id: AML.TA0008
+  name: Discovery
+  technique_count: 7
+  filename: AML.TA0008-discovery
+- id: AML.TA0009
+  name: Collection
+  technique_count: 3
+  filename: AML.TA0009-collection
+- id: AML.TA0001
+  name: AI Attack Staging
+  technique_count: 4
+  filename: AML.TA0001-ai-attack-staging
+- id: AML.TA0014
+  name: Command and Control
+  technique_count: 1
+  filename: AML.TA0014-command-and-control
+- id: AML.TA0010
+  name: Exfiltration
+  technique_count: 5
+  filename: AML.TA0010-exfiltration
+- id: AML.TA0011
+  name: Impact
+  technique_count: 7
+  filename: AML.TA0011-impact
